@@ -3,7 +3,9 @@ WORKDIR /app
 COPY pom.xml .
 RUN mvn dependency:go-offline
 COPY src ./src
-RUN mvn package -DskipTests
+#RUN mvn package -DskipTests
+RUN mvn package
+
 
 FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
